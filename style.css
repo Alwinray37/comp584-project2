@@ -9,20 +9,24 @@ html {
 *:before, 
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
 	font-family: Arial, Geneva, sans-serif;
-}
-a {
-	color: #2772B0;
+	background: linear-gradient(peachpuff, beige);
+	min-height: 100vh;
 }
 .wrapper {
-	width: 97%;
+	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
 	float: none;
-	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	/* gap: 1rem; */
+	padding: 1rem 0;
 }
 
 div img {
@@ -36,31 +40,52 @@ div img {
 .row {
 	display: flex;
 	flex-flow: row wrap;
+	flex-direction: column;
+	/* gap: 1rem; */
+	flex-wrap: wrap;
 }
 
 /* attribute selector to give some margin between columns and apply styles to flex items */
 
 [class*="col-"] {
-	margin-left: 4%;
 	flex: 0 0 92%;
+	text-align: center;
+	padding: 2rem;
+	gap: 1rem;
+	outline: 2px solid black;
 }
 
 /* Add background colors to see how much space each column is taking */
 
 .col-1 {
-	background-color: #A3CDD9;
+	background-color: #98e2ff;
 }
 
 .col-2 {
 	background-color: #FFFCE6;
 }
 
+.col-3{
+	background-color: lightgreen;
+}
+.col-4{
+	background-color: rgb(246, 246, 70);
+}
+.col-5{
+	background-color: pink;
+}
+.col-6{
+	background-color: blanchedalmond;
+}
+
 /* Tablet Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
-	
-  .col-1,
-  .col-2 {
-		flex: 0 0 44%;
+	.row{
+		flex-direction: row;
+	}
+	.col-1,
+	.col-2 {
+		flex: 0 0 100%;
 	}
   
   
@@ -70,16 +95,26 @@ div img {
 }
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-  
-  
+	.row{
+		flex-direction: row;
+	}
+	[class*="col-"] {
+		flex: 1;
+	}
+
  	.col-1 {
-		flex: 0 0 20%;
+		flex: 0 0 1;
 	}
   
-  
-  
 	.col-2 {
-		flex: 0 0 44%;
+		flex: 0 0 1;
+	}
+
+	.large{
+	flex: 3;
+	}
+	.med{
+		flex: 2;
 	}
 
 }
