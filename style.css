@@ -48,7 +48,7 @@ div img {
 /* attribute selector to give some margin between columns and apply styles to flex items */
 
 [class*="col-"] {
-	flex: 0 0 92%;
+	flex: 100%;
 	text-align: center;
 	padding: 2rem;
 	gap: 1rem;
@@ -56,15 +56,12 @@ div img {
 }
 
 /* Add background colors to see how much space each column is taking */
-
 .col-1 {
 	background-color: #98e2ff;
 }
-
 .col-2 {
 	background-color: #FFFCE6;
 }
-
 .col-3{
 	background-color: lightgreen;
 }
@@ -83,9 +80,11 @@ div img {
 	.row{
 		flex-direction: row;
 	}
-	.col-1,
-	.col-2 {
-		flex: 0 0 100%;
+	.col-1, .col-2 {
+		flex: 0 0 50%;
+	}
+	.col-6{
+		flex: 50%;
 	}
   
   
