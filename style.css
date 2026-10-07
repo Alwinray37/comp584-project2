@@ -15,105 +15,124 @@ html {
 
 body {
 	font-family: Arial, Geneva, sans-serif;
-	background: linear-gradient(peachpuff, beige);
+	background: linear-gradient(#dff3f2, #fff8e7);
 	min-height: 100vh;
+	color: #17324d;
 }
 .wrapper {
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
-	float: none;
 	display: flex;
 	flex-direction: column;
-	/* gap: 1rem; */
 	padding: 1rem 0;
+}
+
+h1 {
+	text-align: center;
+	color: #0e6072;
+	margin-bottom: 1rem;
 }
 
 div img {
 	width: 100%;
-	max-width: 225px; 
+	max-width: 225px;
 }
 
-/* grid system -- mobile first! */
-/* flex contatiner */
-
-.row {
-	display: flex;
-	flex-flow: row wrap;
-	flex-direction: column;
-	/* gap: 1rem; */
-	flex-wrap: wrap;
-}
-
-/* attribute selector to give some margin between columns and apply styles to flex items */
-
-[class*="col-"] {
-	flex: 100%;
+.country-header {
+	width: 100%;
+	background: #0e6072;
+	color: white;
+	padding: 1rem;
+	margin-top: 1.5rem;
 	text-align: center;
-	padding: 2rem;
-	gap: 1rem;
 	outline: 2px solid black;
 }
 
-/* Add background colors to see how much space each column is taking */
-.col-1 {
-	background-color: #98e2ff;
-}
-.col-2 {
-	background-color: #FFFCE6;
-}
-.col-3{
-	background-color: lightgreen;
-}
-.col-4{
-	background-color: rgb(246, 246, 70);
-}
-.col-5{
-	background-color: pink;
-}
-.col-6{
-	background-color: blanchedalmond;
+.row {
+	display: flex;
+	flex-flow: column wrap;
 }
 
-/* Tablet Landscape Screen Sizes */
-@media only screen and (min-width: 480px)  {
-	.row{
-		flex-direction: row;
+[class*="col-"] {
+	flex: 0 0 100%;
+	text-align: center;
+	padding: 2rem;
+	outline: 2px solid #0e6072;
+}
+
+.col-1 { background-color: #d9f1f2; }
+.col-2 { background-color: #fff3d6; }
+.col-3 { background-color: #e1f0dc; }
+.col-4 { background-color: #f8e2b5; }
+.col-5 { background-color: #f8d9c4; }
+.col-6 { background-color: #e5e0f4; }
+
+.row-5 .last { order: 1; }
+.row-5 .first { order: 2; }
+.row-5 .med { order: 3; }
+
+@media only screen and (min-width: 480px) {
+	.row {
+		flex-flow: row wrap;
 	}
-	.col-1, .col-2 {
+
+	.col-1,
+	.col-2,
+	.row-5 .first,
+	.row-5 .last {
 		flex: 0 0 50%;
 	}
-	.col-6{
+
+	.row-3 .col-3,
+	.row-5 .first,
+	.row-5 .last {
+		flex-basis: 25%;
+	}
+
+	.row-3 .large,
+	.row-5 .med {
+		flex-basis: 75%;
+	}
+
+	.row-4 .col-4 {
+		flex-basis: 100%;
+	}
+
+	.row-5 .med {
+		flex-basis: 50%;
+	}
+
+	.row-6 .col-6 {
+		flex: 20%;
+	}
+}
+
+@media only screen and (min-width: 770px) {
+	.row-1 .col-1,
+	.row-3 .col-3,
+	.row-5 .first,
+	.row-5 .last {
+		flex: 25%;
+	}
+
+	.row-2 .col-2,
+	.row-3 .large,
+	.row-5 .med {
 		flex: 50%;
 	}
-  
-  
 
-
-
-}
-/* Desktop screen Sizes */
-@media only screen and (min-width: 768px) {
-	.row{
-		flex-direction: row;
-	}
-	[class*="col-"] {
-		flex: 1;
+	.row-4 .col-4 {
+		flex: 100%;
 	}
 
- 	.col-1 {
-		flex: 0 0 1;
-	}
-  
-	.col-2 {
-		flex: 0 0 1;
+	.row-5 .first,
+	.row-5 .med,
+	.row-5 .last {
+		order: initial;
 	}
 
-	.large{
-	flex: 3;
+	.row-6 .col-6 {
+		flex: 25%;
 	}
-	.med{
-		flex: 2;
-	}
-
 }
