@@ -1,6 +1,22 @@
 # Comp584-Project 2 Flexbox
 
-live site:  
+live site: https://alwinray37.github.io/comp584-project2/
+
+## Project Details:
+- Theme is updated to travel
+  - each row represents a country
+  - each item/column in the row is a place in that country that someone should visit. 
+- rows:
+  - display flex
+  - base style is flex column for mobile first display
+  - flex display gets updated with tablet and desktop view
+  - row-5 has 1-2-1 column layout
+- row 6:
+  - 5 items
+- images from unsplash
+- the links lead to google maps for that location.
+- row 5:
+  - order of items updated in tablet view
 
 ## Project Instructions:
 - change the dog theme from the example content. 
